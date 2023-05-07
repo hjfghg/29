@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react'
+import './App.css'
 
-function App() {
+const App = (props) => {
+  const [liText] = useState(props.initialLiText)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+        <div className='top-div'>
+          <h1>Заголовок</h1>
+        </div>
+        <div className='bottom-div'>
+          <div className="left-div">
+            <ul>
+              <div className="red">
+                {liText}
+              </div>
+              <div className="blue">
+                {liText}
+              </div>
+              <div className="green">
+                {liText}
+              </div>
+            </ul>
+          </div>
+          <div className='right-div'>
+            <img className='image'></img>
+            <img className='image'></img>
+            <img className='image'></img>
+          </div>
+        </div>
+      </div>
     </div>
-  );
+  )
 }
 
 export default App;
